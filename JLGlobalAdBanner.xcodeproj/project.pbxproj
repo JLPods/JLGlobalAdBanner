@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAA2DC071A0EF72F00E2495D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2DC061A0EF72F00E2495D /* AppDelegate.swift */; };
+		AAA2DC091A0EF72F00E2495D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2DC081A0EF72F00E2495D /* ViewController.swift */; };
+		AAA2DC0C1A0EF72F00E2495D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA2DC0A1A0EF72F00E2495D /* Main.storyboard */; };
+		AAA2DC0E1A0EF72F00E2495D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA2DC0D1A0EF72F00E2495D /* Images.xcassets */; };
+		AAA2DC111A0EF72F00E2495D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA2DC0F1A0EF72F00E2495D /* LaunchScreen.xib */; };
+		AAA2DC1D1A0EF72F00E2495D /* JLGlobalAdBannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2DC1C1A0EF72F00E2495D /* JLGlobalAdBannerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAA2DC171A0EF72F00E2495D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAA2DBF91A0EF72F00E2495D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAA2DC001A0EF72F00E2495D;
+			remoteInfo = JLGlobalAdBanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AAA2DC011A0EF72F00E2495D /* JLGlobalAdBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLGlobalAdBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA2DC051A0EF72F00E2495D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAA2DC061A0EF72F00E2495D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AAA2DC081A0EF72F00E2495D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAA2DC0B1A0EF72F00E2495D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AAA2DC0D1A0EF72F00E2495D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AAA2DC101A0EF72F00E2495D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AAA2DC161A0EF72F00E2495D /* JLGlobalAdBannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLGlobalAdBannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA2DC1B1A0EF72F00E2495D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAA2DC1C1A0EF72F00E2495D /* JLGlobalAdBannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLGlobalAdBannerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAA2DBFE1A0EF72F00E2495D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAA2DC131A0EF72F00E2495D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAA2DBF81A0EF72F00E2495D = {
+			isa = PBXGroup;
+			children = (
+				AAA2DC031A0EF72F00E2495D /* JLGlobalAdBanner */,
+				AAA2DC191A0EF72F00E2495D /* JLGlobalAdBannerTests */,
+				AAA2DC021A0EF72F00E2495D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAA2DC021A0EF72F00E2495D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAA2DC011A0EF72F00E2495D /* JLGlobalAdBanner.app */,
+				AAA2DC161A0EF72F00E2495D /* JLGlobalAdBannerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAA2DC031A0EF72F00E2495D /* JLGlobalAdBanner */ = {
+			isa = PBXGroup;
+			children = (
+				AAA2DC061A0EF72F00E2495D /* AppDelegate.swift */,
+				AAA2DC081A0EF72F00E2495D /* ViewController.swift */,
+				AAA2DC0A1A0EF72F00E2495D /* Main.storyboard */,
+				AAA2DC0D1A0EF72F00E2495D /* Images.xcassets */,
+				AAA2DC0F1A0EF72F00E2495D /* LaunchScreen.xib */,
+				AAA2DC041A0EF72F00E2495D /* Supporting Files */,
+			);
+			path = JLGlobalAdBanner;
+			sourceTree = "<group>";
+		};
+		AAA2DC041A0EF72F00E2495D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAA2DC051A0EF72F00E2495D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAA2DC191A0EF72F00E2495D /* JLGlobalAdBannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAA2DC1C1A0EF72F00E2495D /* JLGlobalAdBannerTests.swift */,
+				AAA2DC1A1A0EF72F00E2495D /* Supporting Files */,
+			);
+			path = JLGlobalAdBannerTests;
+			sourceTree = "<group>";
+		};
+		AAA2DC1A1A0EF72F00E2495D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAA2DC1B1A0EF72F00E2495D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAA2DC001A0EF72F00E2495D /* JLGlobalAdBanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAA2DC201A0EF72F00E2495D /* Build configuration list for PBXNativeTarget "JLGlobalAdBanner" */;
+			buildPhases = (
+				AAA2DBFD1A0EF72F00E2495D /* Sources */,
+				AAA2DBFE1A0EF72F00E2495D /* Frameworks */,
+				AAA2DBFF1A0EF72F00E2495D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLGlobalAdBanner;
+			productName = JLGlobalAdBanner;
+			productReference = AAA2DC011A0EF72F00E2495D /* JLGlobalAdBanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AAA2DC151A0EF72F00E2495D /* JLGlobalAdBannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAA2DC231A0EF72F00E2495D /* Build configuration list for PBXNativeTarget "JLGlobalAdBannerTests" */;
+			buildPhases = (
+				AAA2DC121A0EF72F00E2495D /* Sources */,
+				AAA2DC131A0EF72F00E2495D /* Frameworks */,
+				AAA2DC141A0EF72F00E2495D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAA2DC181A0EF72F00E2495D /* PBXTargetDependency */,
+			);
+			name = JLGlobalAdBannerTests;
+			productName = JLGlobalAdBannerTests;
+			productReference = AAA2DC161A0EF72F00E2495D /* JLGlobalAdBannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAA2DBF91A0EF72F00E2495D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Jordan Lewis";
+				TargetAttributes = {
+					AAA2DC001A0EF72F00E2495D = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					AAA2DC151A0EF72F00E2495D = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = AAA2DC001A0EF72F00E2495D;
+					};
+				};
+			};
+			buildConfigurationList = AAA2DBFC1A0EF72F00E2495D /* Build configuration list for PBXProject "JLGlobalAdBanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAA2DBF81A0EF72F00E2495D;
+			productRefGroup = AAA2DC021A0EF72F00E2495D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAA2DC001A0EF72F00E2495D /* JLGlobalAdBanner */,
+				AAA2DC151A0EF72F00E2495D /* JLGlobalAdBannerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAA2DBFF1A0EF72F00E2495D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAA2DC0C1A0EF72F00E2495D /* Main.storyboard in Resources */,
+				AAA2DC111A0EF72F00E2495D /* LaunchScreen.xib in Resources */,
+				AAA2DC0E1A0EF72F00E2495D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAA2DC141A0EF72F00E2495D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAA2DBFD1A0EF72F00E2495D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAA2DC091A0EF72F00E2495D /* ViewController.swift in Sources */,
+				AAA2DC071A0EF72F00E2495D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAA2DC121A0EF72F00E2495D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAA2DC1D1A0EF72F00E2495D /* JLGlobalAdBannerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAA2DC181A0EF72F00E2495D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAA2DC001A0EF72F00E2495D /* JLGlobalAdBanner */;
+			targetProxy = AAA2DC171A0EF72F00E2495D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AAA2DC0A1A0EF72F00E2495D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAA2DC0B1A0EF72F00E2495D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AAA2DC0F1A0EF72F00E2495D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAA2DC101A0EF72F00E2495D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAA2DC1E1A0EF72F00E2495D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AAA2DC1F1A0EF72F00E2495D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAA2DC211A0EF72F00E2495D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JLGlobalAdBanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AAA2DC221A0EF72F00E2495D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JLGlobalAdBanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AAA2DC241A0EF72F00E2495D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JLGlobalAdBannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLGlobalAdBanner.app/JLGlobalAdBanner";
+			};
+			name = Debug;
+		};
+		AAA2DC251A0EF72F00E2495D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JLGlobalAdBannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLGlobalAdBanner.app/JLGlobalAdBanner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAA2DBFC1A0EF72F00E2495D /* Build configuration list for PBXProject "JLGlobalAdBanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAA2DC1E1A0EF72F00E2495D /* Debug */,
+				AAA2DC1F1A0EF72F00E2495D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAA2DC201A0EF72F00E2495D /* Build configuration list for PBXNativeTarget "JLGlobalAdBanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAA2DC211A0EF72F00E2495D /* Debug */,
+				AAA2DC221A0EF72F00E2495D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AAA2DC231A0EF72F00E2495D /* Build configuration list for PBXNativeTarget "JLGlobalAdBannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAA2DC241A0EF72F00E2495D /* Debug */,
+				AAA2DC251A0EF72F00E2495D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAA2DBF91A0EF72F00E2495D /* Project object */;
+}
