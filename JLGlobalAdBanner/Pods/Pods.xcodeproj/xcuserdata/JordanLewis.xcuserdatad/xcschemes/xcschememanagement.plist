@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-JLGlobalAdBanner-Cent.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JLGlobalAdBanner-Dollar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JLGlobalAdBanner-Google-Mobile-Ads-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JLGlobalAdBanner-JLThemeHelper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JLGlobalAdBanner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0047D06E995226A46D46C7A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>128F2D924B010C00FE7EB64A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1F819CBD76BD08E62A6E3305</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A5EE011DECC3AD5849C6095</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E32274065580C1BB19B5F94B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

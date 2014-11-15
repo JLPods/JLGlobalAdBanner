@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D9FAA2F41E01BCAE905AF3D /* libPods-JLGlobalAdBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CE41B0E6E212F8A560DC1D /* libPods-JLGlobalAdBanner.a */; };
 		AAA2DC071A0EF72F00E2495D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2DC061A0EF72F00E2495D /* AppDelegate.swift */; };
 		AAA2DC091A0EF72F00E2495D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2DC081A0EF72F00E2495D /* ViewController.swift */; };
 		AAA2DC0C1A0EF72F00E2495D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA2DC0A1A0EF72F00E2495D /* Main.storyboard */; };
 		AAA2DC0E1A0EF72F00E2495D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA2DC0D1A0EF72F00E2495D /* Images.xcassets */; };
 		AAA2DC111A0EF72F00E2495D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA2DC0F1A0EF72F00E2495D /* LaunchScreen.xib */; };
 		AAA2DC1D1A0EF72F00E2495D /* JLGlobalAdBannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2DC1C1A0EF72F00E2495D /* JLGlobalAdBannerTests.swift */; };
+		AAC934591A17828E00E37796 /* DAAppObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC934521A17828E00E37796 /* DAAppObject.m */; };
+		AAC9345A1A17828E00E37796 /* DAAppsViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AAC934531A17828E00E37796 /* DAAppsViewController.bundle */; };
+		AAC9345B1A17828E00E37796 /* DAAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC934551A17828E00E37796 /* DAAppsViewController.m */; };
+		AAC9345C1A17828E00E37796 /* DAAppViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC934571A17828E00E37796 /* DAAppViewCell.m */; };
+		AAC9345D1A17828E00E37796 /* GlobalADController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC934581A17828E00E37796 /* GlobalADController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7BFAD738E76B789D05EC099F /* Pods-JLGlobalAdBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLGlobalAdBanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLGlobalAdBanner/Pods-JLGlobalAdBanner.release.xcconfig"; sourceTree = "<group>"; };
+		AA1979541A0EFA8B0050D9A8 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		AAA2DC011A0EF72F00E2495D /* JLGlobalAdBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLGlobalAdBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA2DC051A0EF72F00E2495D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAA2DC061A0EF72F00E2495D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +44,16 @@
 		AAA2DC161A0EF72F00E2495D /* JLGlobalAdBannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLGlobalAdBannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA2DC1B1A0EF72F00E2495D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAA2DC1C1A0EF72F00E2495D /* JLGlobalAdBannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLGlobalAdBannerTests.swift; sourceTree = "<group>"; };
+		AAC934511A17828E00E37796 /* DAAppObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAppObject.h; sourceTree = "<group>"; };
+		AAC934521A17828E00E37796 /* DAAppObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAppObject.m; sourceTree = "<group>"; };
+		AAC934531A17828E00E37796 /* DAAppsViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DAAppsViewController.bundle; sourceTree = "<group>"; };
+		AAC934541A17828E00E37796 /* DAAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAppsViewController.h; sourceTree = "<group>"; };
+		AAC934551A17828E00E37796 /* DAAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAppsViewController.m; sourceTree = "<group>"; };
+		AAC934561A17828E00E37796 /* DAAppViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAppViewCell.h; sourceTree = "<group>"; };
+		AAC934571A17828E00E37796 /* DAAppViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAppViewCell.m; sourceTree = "<group>"; };
+		AAC934581A17828E00E37796 /* GlobalADController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalADController.swift; sourceTree = "<group>"; };
+		DB2BE36FC142FDF49CC0D391 /* Pods-JLGlobalAdBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLGlobalAdBanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLGlobalAdBanner/Pods-JLGlobalAdBanner.debug.xcconfig"; sourceTree = "<group>"; };
+		F6CE41B0E6E212F8A560DC1D /* libPods-JLGlobalAdBanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JLGlobalAdBanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D9FAA2F41E01BCAE905AF3D /* libPods-JLGlobalAdBanner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +75,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D8CDA74759DE9C48F215508 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB2BE36FC142FDF49CC0D391 /* Pods-JLGlobalAdBanner.debug.xcconfig */,
+				7BFAD738E76B789D05EC099F /* Pods-JLGlobalAdBanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AAA2DBF81A0EF72F00E2495D = {
 			isa = PBXGroup;
 			children = (
 				AAA2DC031A0EF72F00E2495D /* JLGlobalAdBanner */,
 				AAA2DC191A0EF72F00E2495D /* JLGlobalAdBannerTests */,
 				AAA2DC021A0EF72F00E2495D /* Products */,
+				4D8CDA74759DE9C48F215508 /* Pods */,
+				AF285D6C156DCB7463E44DD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,7 +109,9 @@
 			children = (
 				AAA2DC061A0EF72F00E2495D /* AppDelegate.swift */,
 				AAA2DC081A0EF72F00E2495D /* ViewController.swift */,
+				AA1979541A0EFA8B0050D9A8 /* Bridging-Header.h */,
 				AAA2DC0A1A0EF72F00E2495D /* Main.storyboard */,
+				AAC9344F1A17828E00E37796 /* JLGlobalAdBanner */,
 				AAA2DC0D1A0EF72F00E2495D /* Images.xcassets */,
 				AAA2DC0F1A0EF72F00E2495D /* LaunchScreen.xib */,
 				AAA2DC041A0EF72F00E2495D /* Supporting Files */,
@@ -112,6 +144,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AAC9344F1A17828E00E37796 /* JLGlobalAdBanner */ = {
+			isa = PBXGroup;
+			children = (
+				AAC934501A17828E00E37796 /* DAAppsViewController */,
+				AAC934581A17828E00E37796 /* GlobalADController.swift */,
+			);
+			path = JLGlobalAdBanner;
+			sourceTree = "<group>";
+		};
+		AAC934501A17828E00E37796 /* DAAppsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAC934511A17828E00E37796 /* DAAppObject.h */,
+				AAC934521A17828E00E37796 /* DAAppObject.m */,
+				AAC934531A17828E00E37796 /* DAAppsViewController.bundle */,
+				AAC934541A17828E00E37796 /* DAAppsViewController.h */,
+				AAC934551A17828E00E37796 /* DAAppsViewController.m */,
+				AAC934561A17828E00E37796 /* DAAppViewCell.h */,
+				AAC934571A17828E00E37796 /* DAAppViewCell.m */,
+			);
+			path = DAAppsViewController;
+			sourceTree = "<group>";
+		};
+		AF285D6C156DCB7463E44DD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6CE41B0E6E212F8A560DC1D /* libPods-JLGlobalAdBanner.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAA2DC201A0EF72F00E2495D /* Build configuration list for PBXNativeTarget "JLGlobalAdBanner" */;
 			buildPhases = (
+				3BEE6E3D121B13368E3D51A1 /* Check Pods Manifest.lock */,
 				AAA2DBFD1A0EF72F00E2495D /* Sources */,
 				AAA2DBFE1A0EF72F00E2495D /* Frameworks */,
 				AAA2DBFF1A0EF72F00E2495D /* Resources */,
+				C45D493252850A491622E034 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +260,7 @@
 				AAA2DC0C1A0EF72F00E2495D /* Main.storyboard in Resources */,
 				AAA2DC111A0EF72F00E2495D /* LaunchScreen.xib in Resources */,
 				AAA2DC0E1A0EF72F00E2495D /* Images.xcassets in Resources */,
+				AAC9345A1A17828E00E37796 /* DAAppsViewController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,13 +273,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3BEE6E3D121B13368E3D51A1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C45D493252850A491622E034 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLGlobalAdBanner/Pods-JLGlobalAdBanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AAA2DBFD1A0EF72F00E2495D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AAA2DC091A0EF72F00E2495D /* ViewController.swift in Sources */,
+				AAC9345B1A17828E00E37796 /* DAAppsViewController.m in Sources */,
+				AAC9345C1A17828E00E37796 /* DAAppViewCell.m in Sources */,
 				AAA2DC071A0EF72F00E2495D /* AppDelegate.swift in Sources */,
+				AAC934591A17828E00E37796 /* DAAppObject.m in Sources */,
+				AAC9345D1A17828E00E37796 /* GlobalADController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,21 +437,25 @@
 		};
 		AAA2DC211A0EF72F00E2495D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB2BE36FC142FDF49CC0D391 /* Pods-JLGlobalAdBanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JLGlobalAdBanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JLGlobalAdBanner/Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		AAA2DC221A0EF72F00E2495D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BFAD738E76B789D05EC099F /* Pods-JLGlobalAdBanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JLGlobalAdBanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JLGlobalAdBanner/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +512,7 @@
 				AAA2DC221A0EF72F00E2495D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAA2DC231A0EF72F00E2495D /* Build configuration list for PBXNativeTarget "JLGlobalAdBannerTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +521,7 @@
 				AAA2DC251A0EF72F00E2495D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,19 @@
+PODS:
+  - Cent (1.0.0):
+    - Dollar (~> 1.0.0)
+  - Dollar (1.0.0)
+  - Google-Mobile-Ads-SDK (6.12.2)
+  - JLThemeHelper (2.1)
+
+DEPENDENCIES:
+  - Cent
+  - Google-Mobile-Ads-SDK
+  - JLThemeHelper (~> 2.1)
+
+SPEC CHECKSUMS:
+  Cent: 96dcdef98f7d5e10c31771255eb8f75e98d9b846
+  Dollar: 7d9b8bca8885f93a87083d0dd136e58bdcdfe5cb
+  Google-Mobile-Ads-SDK: 9761186eb5dc5e1493e71dcce2b525159f763d42
+  JLThemeHelper: 1fc75a267059ab2ee658736798b244a7a666cfa7
+
+COCOAPODS: 0.34.4
