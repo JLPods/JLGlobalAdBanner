@@ -9,18 +9,47 @@
 import UIKit
 import Foundation
 import iAd
+import GoogleMobileAds
 
-class GlobalADController: UIViewController, ADBannerViewDelegate, GADBannerViewDelegate {
+enum GlobalBannerAdLocation {
+    case Top
+    case Bottom
+}
+/*
+protocol GlobalAdControllerDelegate {
+optional func interstitalAdsFailedToLoad()
+optional func interstitialAdWasDismissed()
+}
+*/
+class GlobalADController: UIViewController, ADBannerViewDelegate, ADInterstitialAdDelegate, GADBannerViewDelegate, GADInterstitialDelegate {
     
-    let kScreenRect:CGRect = UIScreen.mainScreen().bounds
-    let kScreenWidth = UIScreen.mainScreen().bounds.width
-    let kScreenHeight = UIScreen.mainScreen().bounds.height
+    // The Screen Dimensions for Portrait
+    private let kScreenRect:CGRect = UIScreen.mainScreen().bounds
+    private let kScreenWidth:CGFloat = UIScreen.mainScreen().bounds.width
+    private let kScreenHeight:CGFloat = UIScreen.mainScreen().bounds.height
     
-    let kAdBannerID = "ca-app-pub-9389217251179381/5394265753"
+    // The Admob Ad Unit IDs
+    private var kAdBannerID:String = "" // Sample "ca-app-pub-9389217251179381/2392084158"
+    private var kAdInterstitialID:String = "" // Sample "ca-app-pub-9389217251179381/5345550554"
     
-    let kAdBannerTop: CGFloat = 0
-    let kAdBannerBottom: CGFloat = UIScreen.mainScreen().bounds.height-50
+    // Ad Banners
+    private var iAdBannerView: ADBannerView = ADBannerView(adType: ADAdType.Banner)
+    private var adMobBannerView:GADBannerView = GADBannerView(frame: CGRectMake(0, -50, UIScreen.mainScreen().bounds.width, 50))
     
+    // Interstitial Ads
+    private var iAdInterstitialAd:ADInterstitialAd = ADInterstitialAd()
+    private var admobInterstitialAd:GADInterstitial = GADInterstitial()
+    
+    // The Background Button in case Banner Ads don't load
+    private let moreAppsButton: UIButton = UIButton(type: UIButtonType.Custom)
+    
+    // Visual Config
+    private let kAdBannerTop: CGFloat = 0
+    private let kAdBannerBottom: CGFloat = UIScreen.mainScreen().bounds.height-50
+    private var bannerBackgroundColor:UIColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 1)
+    private var bannerTextColor:UIColor = UIColor.orangeColor()
+    
+    // BEGIN Initialisation Code
     class var sharedADController : GlobalADController {
         struct Static {
             static let sharedADController : GlobalADController = GlobalADController()
@@ -28,43 +57,92 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, GADBannerViewD
         return Static.sharedADController
     }
     
-    override init() {
+    init() {
         super.init(nibName: nil, bundle: nil)
         // Initialization code
-        println("Init Ad Controller")
+        print("Init Ad Controller", terminator: "")
+        
+        // Prepare the Interstitial Ad
+        reloadiAdInterstitialAd(&iAdInterstitialAd)
+        reloadAdmobInterstitial(&admobInterstitialAd)
     }
-
-    required init(coder aDecoder: NSCoder) {
+    
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("View Did Load")
-
-        self.view.frame = CGRectMake(0, 0, kScreenWidth, 50)
-        self.view.backgroundColor = kDarkColor2
+        print("View Did Load", terminator: "")
         
-        var moreAppsButton: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        self.view.frame = CGRectMake(0, 0, kScreenWidth, 50)
+        self.view.backgroundColor = UIColor.blackColor()
+        
+        // Create the background more apps button in case banner ads do not load
         moreAppsButton.frame = CGRectMake(0, 0, kScreenWidth, 50)
-        moreAppsButton.backgroundColor = kDarkColor2
+        moreAppsButton.backgroundColor = bannerBackgroundColor
         moreAppsButton.setTitle("More Apps by This Developer", forState: UIControlState.Normal)
-        moreAppsButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        moreAppsButton.setTitleColor(bannerTextColor, forState: UIControlState.Normal)
         moreAppsButton.addTarget(self, action: "moreApps", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(moreAppsButton)
         
         initAds()
     }
+    // END Initialisation Code
     
-    func moreApps() {
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        self.parentViewController?.presentViewController(storyboard.instantiateViewControllerWithIdentifier("MoreAppsNav") as UIViewController, animated: true, completion: nil)
+    // BEGIN Setters
+    //TODO: Test if this works
+    func setAdBannerLocation(lc:GlobalBannerAdLocation) {
+        switch (lc) {
+        case .Top:
+            self.view.frame.origin.y = kAdBannerTop
+            break
+        case .Bottom:
+            self.view.frame.origin.y = kAdBannerBottom
+            break
+        }
     }
     
-    var iAdBannerView: ADBannerView = ADBannerView(adType: ADAdType.Banner)
-    var adMobBannerView:GADBannerView = GADBannerView(frame: CGRectMake(0, -50, UIScreen.mainScreen().bounds.width, 50))
+    func setAdmobBannerAdUnitID(unitID:String) {
+        kAdBannerID = unitID
+    }
     
+    func setAdmobInterstitialAdUnitID(unitID:String) {
+        kAdInterstitialID = unitID
+    }
+    
+    func setBannerBackgroundColor(color:UIColor) {
+        self.bannerBackgroundColor = color
+        self.moreAppsButton.backgroundColor = color
+    }
+    
+    func setBannerTextColor(color:UIColor) {
+        self.bannerTextColor = color
+        self.moreAppsButton.setTitleColor(color, forState: UIControlState.Normal)
+    }
+    // END Setters
+    
+    // BEGIN More Apps Code
+    private func moreApps() {
+        //let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        
+        let moreAppsNav:UINavigationController = UINavigationController(rootViewController: DAAppsViewController())
+        moreAppsNav.navigationBar.barTintColor = UIColor(red: 27/255, green: 27/255, blue: 27/255, alpha: 1)
+        moreAppsNav.navigationBar.tintColor = UIColor.whiteColor()
+        moreAppsNav.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName:UIColor.whiteColor(),
+            //NSFontAttributeName:UIFont(name: kFontNameOpenSans, size: 21)!
+        ]
+        self.parentViewController?.presentViewController(moreAppsNav, animated: true, completion: nil)
+        
+        //NSNotificationCenter.defaultCenter().postNotificationName("GlobalAdController Show More Apps", object: nil)
+        
+        //self.parentViewController?.presentViewController(storyboard.instantiateViewControllerWithIdentifier("MoreAppsNav"), animated: true, completion: nil)
+    }
+    // END More Apps Code
+    
+    // BEGIN Banner Ad Code
     func initAds() {
         initiAd()
     }
@@ -78,13 +156,13 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, GADBannerViewD
     }
     
     func bannerViewDidLoadAd(banner: ADBannerView!) {
-        println("iAd did load Ad")
+        print("iAd did load Ad", terminator: "")
         showBanner(iAdBannerView)
         hideBanner(adMobBannerView)
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        println("iAd failed to load Ad with error \(error.localizedDescription)")
+        print("iAd failed to load Ad with error \(error.localizedDescription)", terminator: "")
         initAdMob()
         adMobBannerView.loadRequest(GADRequest())
         hideBanner(iAdBannerView)
@@ -101,17 +179,19 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, GADBannerViewD
     }
     
     func adViewDidReceiveAd(view: GADBannerView!)  {
-        println("AdMob did load Ad")
+        print("AdMob did load Ad", terminator: "")
         showBanner(adMobBannerView)
         hideBanner(iAdBannerView)
     }
+    
     func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        println("AdMob failed to load Ad with error \(error.localizedDescription)")
+        print("AdMob failed to load Ad with error \(error.localizedDescription)", terminator: "")
         hideBanner(adMobBannerView)
     }
     // END Admob
     
-    func showBanner(banner:UIView) {
+    // BEGIN Controlling the Banners
+    private func showBanner(banner:UIView) {
         if banner.hidden {
             banner.hidden = false
             UIView.animateWithDuration(0.5, animations: {
@@ -120,7 +200,7 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, GADBannerViewD
         }
     }
     
-    func hideBanner(banner:UIView) {
+    private func hideBanner(banner:UIView) {
         if !banner.hidden {
             banner.hidden = true
             UIView.animateWithDuration(0.5, animations: {
@@ -128,5 +208,88 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, GADBannerViewD
             })
         }
     }
-
+    // END Controlling the Banners
+    // END Banner Ad Code
+    
+    // BEGIN Interstitial Ad Code
+    func showInterstitialAdInViewController(vc:UIViewController) throws {
+        self.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Manual
+        if !self.requestInterstitialAdPresentation() {
+            if admobInterstitialAd.isReady {
+                admobInterstitialAd.presentFromRootViewController(vc)
+            } else {
+                // Failed to load
+            }
+        } else {
+            // Failed to load
+        }
+    }
+    
+    //TODO: Test this and see if it actually reloads it
+    private func reloadiAdInterstitialAd(inout interstitial:ADInterstitialAd) {
+        
+    }
+    
+    //TODO: Test this and see if it actually reloads it
+    private func reloadAdmobInterstitial(inout interstitial:GADInterstitial) {
+        let _interstitial = GADInterstitial(adUnitID: kAdInterstitialID);
+        _interstitial.delegate = self
+        _interstitial.loadRequest(GADRequest())
+        interstitial = _interstitial
+    }
+    
+    // BEGIN iAd Delegate Functions
+    func interstitialAdActionDidFinish(interstitialAd: ADInterstitialAd!) {
+        
+    }
+    
+    func interstitialAdDidUnload(interstitialAd: ADInterstitialAd!) {
+        
+    }
+    
+    func interstitialAdDidLoad(interstitialAd: ADInterstitialAd!) {
+        
+    }
+    
+    func interstitialAdActionShouldBegin(interstitialAd: ADInterstitialAd!, willLeaveApplication willLeave: Bool) -> Bool {
+        return true
+    }
+    
+    func interstitialAd(interstitialAd: ADInterstitialAd!, didFailWithError error: NSError!) {
+        
+    }
+    
+    func interstitialAdWillLoad(interstitialAd: ADInterstitialAd!) {
+        
+    }
+    // END iAd Delegate Functions
+    
+    // BEGIN Admob Delegate Functions
+    func interstitialWillDismissScreen(ad: GADInterstitial!) {
+        // Reload the ad so that it is ready for the next presentation
+        reloadAdmobInterstitial(&admobInterstitialAd)
+    }
+    
+    func interstitial(ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!) {
+        
+    }
+    
+    func interstitialDidReceiveAd(ad: GADInterstitial!) {
+        
+    }
+    
+    func interstitialDidDismissScreen(ad: GADInterstitial!) {
+        
+    }
+    
+    func interstitialWillLeaveApplication(ad: GADInterstitial!) {
+        
+    }
+    
+    func interstitialWillPresentScreen(ad: GADInterstitial!) {
+        
+    }
+    // END Admob Delegate Functions
+    
+    // END Interstitial Ad Code
 }

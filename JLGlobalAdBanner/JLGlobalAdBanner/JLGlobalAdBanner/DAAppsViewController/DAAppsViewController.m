@@ -9,7 +9,6 @@
 #import "DAAppsViewController.h"
 #import <StoreKit/StoreKit.h>
 #import "DAAppViewCell.h"
-#import <BNEasyGoogleAnalytics/BNEasyGoogleAnalyticsTracker.h>
 
 #define DARK_BACKGROUND_COLOR   [UIColor colorWithWhite:235.0f/255.0f alpha:1.0f]
 #define LIGHT_BACKGROUND_COLOR  [UIColor colorWithWhite:245.0f/255.0f alpha:1.0f]
@@ -37,8 +36,6 @@
 {
     [super viewDidLoad];
     
-    [[BNEasyGoogleAnalyticsTracker sharedTracker] trackScreenNamed:@"More Apps View"];
-    
     self.tableView.rowHeight = 83.0f;
     if (!DA_IS_IOS7) {
         self.tableView.backgroundColor = DARK_BACKGROUND_COLOR;
@@ -54,7 +51,7 @@
     
     [self loadAppsWithArtistId:544691667 completionBlock:nil];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(backToMain)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backToMain)];
     [[self navigationItem] setLeftBarButtonItem:backButton];
 }
 
@@ -114,29 +111,29 @@
     if (languagueCode) {
         [requestUrlString appendFormat:@"&l=%@", languagueCode];
     }
-
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:requestUrlString]];
     [request setTimeoutInterval:20.0f];
     [request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
-
+    
     void (^returnWithResultsAndError)(NSArray *, NSError *) = ^void(NSArray *results, NSError *error) {
         if (completion) {
             completion(results, error);
         }
     };
-
+    
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (connectionError) {
             return returnWithResultsAndError(nil, connectionError);
         }
-
+        
         NSError *jsonError;
         NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
         if (jsonError) {
             return returnWithResultsAndError(nil, jsonError);
         }
-
+        
         NSArray *results = [jsonDictionary objectForKey:@"results"];
         returnWithResultsAndError(results, nil);
     }];

@@ -1,6 +1,0 @@
-#include "Pods-JLGlobalAdBanner-Google-Mobile-Ads-SDK.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/Google-Mobile-Ads-SDK" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Cent" "${PODS_ROOT}/Headers/Public/Dollar" "${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK" "${PODS_ROOT}/Headers/Public/JLThemeHelper"
-LIBRARY_SEARCH_PATHS = ${PODS_JLGLOBALADBANNER_GOOGLE_MOBILE_ADS_SDK_LIBRARY_SEARCH_PATHS}
-OTHER_LDFLAGS = ${PODS_JLGLOBALADBANNER_GOOGLE_MOBILE_ADS_SDK_OTHER_LDFLAGS} -ObjC
-PODS_ROOT = ${SRCROOT}

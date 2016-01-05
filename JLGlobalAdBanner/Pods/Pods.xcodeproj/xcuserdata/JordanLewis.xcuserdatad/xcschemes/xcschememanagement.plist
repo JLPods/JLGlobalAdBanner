@@ -4,27 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-JLGlobalAdBanner-Cent.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JLGlobalAdBanner-Dollar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JLGlobalAdBanner-Google-Mobile-Ads-SDK.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JLGlobalAdBanner-JLThemeHelper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JLGlobalAdBanner.xcscheme</key>
+		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0047D06E995226A46D46C7A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>128F2D924B010C00FE7EB64A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1F819CBD76BD08E62A6E3305</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4A5EE011DECC3AD5849C6095</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E32274065580C1BB19B5F94B</key>
+		<key>1BA84416B19DF31967CCD7D02D962E49</key>
 		<dict>
 			<key>primary</key>
 			<true/>

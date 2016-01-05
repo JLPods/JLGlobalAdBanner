@@ -1,5 +1,0 @@
-#include "Pods-JLGlobalAdBanner-Dollar.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/Dollar" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Cent" "${PODS_ROOT}/Headers/Public/Dollar" "${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK" "${PODS_ROOT}/Headers/Public/JLThemeHelper"
-OTHER_LDFLAGS = ${PODS_JLGLOBALADBANNER_DOLLAR_OTHER_LDFLAGS} -ObjC
-PODS_ROOT = ${SRCROOT}
