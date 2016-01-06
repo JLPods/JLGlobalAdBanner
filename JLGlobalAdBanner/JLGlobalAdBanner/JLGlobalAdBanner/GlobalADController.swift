@@ -15,13 +15,17 @@ enum GlobalBannerAdLocation {
     case Top
     case Bottom
 }
-/*
-protocol GlobalAdControllerDelegate {
-optional func interstitalAdsFailedToLoad()
-optional func interstitialAdWasDismissed()
+
+@objc protocol GlobalAdControllerDelegate {
+    optional func interstitialAdWillPresentScreen()
+    optional func interstitialAdWillLeaveApplication()
+    optional func interstitialAdHasFinished()
 }
-*/
+
 class GlobalADController: UIViewController, ADBannerViewDelegate, ADInterstitialAdDelegate, GADBannerViewDelegate, GADInterstitialDelegate {
+    
+    // Delegate
+    private var delegate:GlobalAdControllerDelegate?
     
     // The Screen Dimensions for Portrait
     private let kScreenRect:CGRect = UIScreen.mainScreen().bounds
@@ -38,7 +42,7 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, ADInterstitial
     
     // Interstitial Ads
     private var iAdInterstitialAd:ADInterstitialAd = ADInterstitialAd()
-    private var admobInterstitialAd:GADInterstitial = GADInterstitial()
+    private var admobInterstitialAd:GADInterstitial = GADInterstitial(adUnitID: "")
     
     // The Background Button in case Banner Ads don't load
     private let moreAppsButton: UIButton = UIButton(type: UIButtonType.Custom)
@@ -93,6 +97,10 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, ADInterstitial
     
     // BEGIN Setters
     //TODO: Test if this works
+    func setDelegate(d:GlobalAdControllerDelegate) {
+        delegate = d
+    }
+    
     func setAdBannerLocation(lc:GlobalBannerAdLocation) {
         switch (lc) {
         case .Top:
@@ -213,15 +221,23 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, ADInterstitial
     
     // BEGIN Interstitial Ad Code
     func showInterstitialAdInViewController(vc:UIViewController) throws {
-        self.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Manual
-        if !self.requestInterstitialAdPresentation() {
-            if admobInterstitialAd.isReady {
-                admobInterstitialAd.presentFromRootViewController(vc)
+        if iAdInterstitialAd.loaded {
+            iAdInterstitialAd.presentInView(vc.view)
+        } else if admobInterstitialAd.isReady {
+            self.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Manual
+            if !self.requestInterstitialAdPresentation() {
+                if admobInterstitialAd.isReady {
+                    admobInterstitialAd.presentFromRootViewController(vc)
+                } else {
+                    // Failed to load
+                    delegate?.interstitialAdHasFinished()
+                }
             } else {
                 // Failed to load
+                delegate?.interstitialAdHasFinished()
             }
         } else {
-            // Failed to load
+            delegate?.interstitialAdHasFinished()
         }
     }
     
@@ -240,28 +256,20 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, ADInterstitial
     
     // BEGIN iAd Delegate Functions
     func interstitialAdActionDidFinish(interstitialAd: ADInterstitialAd!) {
-        
+        delegate?.interstitialAdHasFinished()
     }
     
-    func interstitialAdDidUnload(interstitialAd: ADInterstitialAd!) {
-        
-    }
+    func interstitialAdDidUnload(interstitialAd: ADInterstitialAd!) { }
     
-    func interstitialAdDidLoad(interstitialAd: ADInterstitialAd!) {
-        
-    }
+    func interstitialAdDidLoad(interstitialAd: ADInterstitialAd!) { }
     
     func interstitialAdActionShouldBegin(interstitialAd: ADInterstitialAd!, willLeaveApplication willLeave: Bool) -> Bool {
         return true
     }
     
-    func interstitialAd(interstitialAd: ADInterstitialAd!, didFailWithError error: NSError!) {
-        
-    }
+    func interstitialAd(interstitialAd: ADInterstitialAd!, didFailWithError error: NSError!) { }
     
-    func interstitialAdWillLoad(interstitialAd: ADInterstitialAd!) {
-        
-    }
+    func interstitialAdWillLoad(interstitialAd: ADInterstitialAd!) {}
     // END iAd Delegate Functions
     
     // BEGIN Admob Delegate Functions
@@ -270,24 +278,20 @@ class GlobalADController: UIViewController, ADBannerViewDelegate, ADInterstitial
         reloadAdmobInterstitial(&admobInterstitialAd)
     }
     
-    func interstitial(ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!) {
-        
-    }
+    func interstitial(ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!) {}
     
-    func interstitialDidReceiveAd(ad: GADInterstitial!) {
-        
-    }
+    func interstitialDidReceiveAd(ad: GADInterstitial!) {}
     
     func interstitialDidDismissScreen(ad: GADInterstitial!) {
-        
+        delegate?.interstitialAdHasFinished()
     }
     
     func interstitialWillLeaveApplication(ad: GADInterstitial!) {
-        
+        delegate?.interstitialAdWillLeaveApplication()
     }
     
     func interstitialWillPresentScreen(ad: GADInterstitial!) {
-        
+        delegate?.interstitialAdWillPresentScreen()
     }
     // END Admob Delegate Functions
     
