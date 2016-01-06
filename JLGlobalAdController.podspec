@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "JLGlobalAdController"
-  s.version      = “0.0.1”
+  s.version      = "0.0.1"
   s.summary      = "The single best CocoaPod for easily adding a banner and interstitial advertisement manager for iAds and AdMob Ads."
 
   # This description is used to generate tags and improve search results.
