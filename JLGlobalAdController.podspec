@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "JLGlobalAdController"
-  s.version      = "0.0.6"
+  s.version      = “0.0.1”
   s.summary      = "The single best CocoaPod for easily adding a banner and interstitial advertisement manager for iAds and AdMob Ads."
 
   # This description is used to generate tags and improve search results.
@@ -83,7 +83,7 @@ For all ads, this pod will prioritise iAd over AdMob.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/JJLewis/JLGlobalAdBanner.git", :tag => "v0.0.6" }
+  s.source       = { :git => "https://github.com/JJLewis/JLGlobalAdBanner.git", :tag => s.version.to_s }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
