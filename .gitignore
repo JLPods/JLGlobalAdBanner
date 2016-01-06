@@ -33,4 +33,4 @@ xcuserdata
 *.xcuserstate
 
 # CocoaPods
-*.podspec
+#*.podspec
